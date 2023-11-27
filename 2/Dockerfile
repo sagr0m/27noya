@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY node.js .
 
-RUN javascript main.py
+RUN javascript node.js
