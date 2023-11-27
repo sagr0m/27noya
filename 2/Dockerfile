@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY node.js .
 
-RUN javascript node.js
+ENTRYPOINT ["javascript", "node.js"]
