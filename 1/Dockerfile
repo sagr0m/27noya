@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY main.py .
 
-RUN python main.py
+ ENTRYPOINT ["python", "main.py"]
