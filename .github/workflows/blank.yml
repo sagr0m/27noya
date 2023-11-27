@@ -17,8 +17,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - run: docker build -t ghcr.io/sagr0m/py:1.0 ./1
+      - run: docker push ghcr.io/sagr0m/py:1.0
       - run: docker build -t ghcr.io/sagr0m/js:1.0 ./2
-      - run: docker push ghcr.io/sagr0m/27noya:1.0
+      - run: docker push ghcr.io/sagr0m/js:1.0
   docker_run:
     needs: [push_to_registry]
     name: docker_run
@@ -33,5 +34,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - run: docker pull ghcr.io/sagr0m/27noya:1.0
-      - run: docker run ghcr.io/sagr0m/27noya:1.0
+      - run: docker pull ghcr.io/sagr0m/py:1.0
+      - run: docker run ghcr.io/sagr0m/py:1.0
+      - run: docker pull ghcr.io/sagr0m/js:1.0
+      - run: docker run ghcr.io/sagr0m/js:1.0
