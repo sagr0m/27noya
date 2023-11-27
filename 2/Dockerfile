@@ -1,4 +1,4 @@
-FROM node.js
+FROM nodejs
 
 WORKDIR /app
 
